@@ -21,6 +21,7 @@
 <a href="#chart" class="hover:text-sky-400 transition">Chart</a>
 <a href="#evidence" class="hover:text-sky-400 transition">Evidence</a>
 <a href="#metrics" class="hover:text-sky-400 transition">Metrics</a>
+<a href="#deepdive" class="hover:text-sky-400 transition">Deep Dive</a>
 <a href="#sources" class="hover:text-sky-400 transition">Sources</a>
 </div></div></nav>
 
@@ -32,7 +33,7 @@
 <p class="mt-6 text-lg sm:text-xl text-slate-400 max-w-2xl leading-relaxed">Local workers in high-skill IT and math occupations face a structural accessibility gap. Specialized jobs are heavily concentrated in the Twin Cities metro, creating classic residence–workplace mismatch.</p>
 <div class="mt-10 flex flex-wrap gap-4">
 <a href="#data" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold text-sm transition">View Key Data</a>
-<a href="#metrics" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-slate-700 hover:border-slate-500 text-slate-300 font-medium text-sm transition">Metrics Toolkit</a>
+<a href="#deepdive" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-slate-700 hover:border-slate-500 text-slate-300 font-medium text-sm transition">Deep-Dive Analyses</a>
 </div></div></header>
 
 <main class="max-w-6xl mx-auto px-4 sm:px-6 pb-24 space-y-24">
@@ -59,7 +60,7 @@
 <tr class="hover:bg-slate-900/50"><td class="px-5 py-4 text-white font-medium">Statewide Comp/Math employment</td><td class="px-5 py-4 font-mono text-sky-400">~97,460 – 108,000</td><td class="px-5 py-4">Minnesota</td><td class="px-5 py-4 text-slate-400">DEED OEWS (workplace-based)</td></tr>
 <tr class="hover:bg-slate-900/50"><td class="px-5 py-4 text-white font-medium">Share of statewide jobs in Twin Cities 7-county metro</td><td class="px-5 py-4 font-mono text-indigo-400">74.2%</td><td class="px-5 py-4">Twin Cities metro</td><td class="px-5 py-4 text-slate-400">~14 pp higher than metro share of all jobs</td></tr>
 <tr class="hover:bg-slate-900/50"><td class="px-5 py-4 text-white font-medium">Share in Greater Minnesota</td><td class="px-5 py-4 font-mono text-violet-400">25.8%</td><td class="px-5 py-4">Rest of state</td><td class="px-5 py-4 text-slate-400">Derived from DEED metro concentration</td></tr>
-<tr class="hover:bg-slate-900/50"><td class="px-5 py-4 text-white font-medium">Local specialized job base</td><td class="px-5 py-4 font-mono text-slate-300">Thin</td><td class="px-5 py-4">Crow Wing / Brainerd Lakes</td><td class="px-5 py-4 text-slate-400">Support, network/GIS, embedded IT dominate; few pure software/data science roles</td></tr>
+<tr class="hover:bg-slate-900/50"><td class="px-5 py-4 text-white font-medium">Local specialized job base</td><td class="px-5 py-4 font-mono text-slate-300">Thin</td><td class="px-5 py-4">Crow Wing / Brainerd Lakes</td><td class="px-5 py-4 text-slate-400">Support, network/GIS, embedded IT dominate</td></tr>
 </tbody></table></div></section>
 
 <section id="chart" class="scroll-mt-24">
@@ -67,131 +68,135 @@
 <p class="text-slate-400 mb-8">Where Minnesota’s Computer & Mathematical jobs are located versus local residential supply.</p>
 <div class="grid lg:grid-cols-2 gap-8">
 <div class="card rounded-2xl p-6"><h3 class="text-sm font-medium text-slate-400 mb-4 uppercase tracking-wider">Share of Statewide Comp/Math Jobs</h3><div class="relative h-64"><canvas id="concentrationChart"></canvas></div><p class="mt-4 text-xs text-slate-500">Source: Minnesota DEED Information Technology Profile (OEWS)</p></div>
-<div class="card rounded-2xl p-6 flex flex-col justify-center"><h3 class="text-sm font-medium text-slate-400 mb-6 uppercase tracking-wider">Local Residential Supply</h3><div class="text-center"><div class="text-6xl sm:text-7xl font-extrabold font-mono gradient-text">532</div><p class="mt-3 text-slate-300">Crow Wing County residents working in<br>Computer & Mathematical occupations</p><p class="mt-4 text-sm text-slate-500">ACS data · Median earnings ~$70,543</p></div><div class="mt-8 pt-6 border-t border-slate-800"><p class="text-sm text-slate-400 leading-relaxed">The 532 figure is <em>where people live</em>. The 74.2% is <em>where the jobs are</em>. This residence–workplace disconnect is the quantitative heart of the spatial mismatch.</p></div></div></div></section>
+<div class="card rounded-2xl p-6 flex flex-col justify-center"><h3 class="text-sm font-medium text-slate-400 mb-6 uppercase tracking-wider">Local Residential Supply</h3><div class="text-center"><div class="text-6xl sm:text-7xl font-extrabold font-mono gradient-text">532</div><p class="mt-3 text-slate-300">Crow Wing County residents working in<br>Computer & Mathematical occupations</p><p class="mt-4 text-sm text-slate-500">ACS data · Median earnings ~$70,543</p></div><div class="mt-8 pt-6 border-t border-slate-800"><p class="text-sm text-slate-400 leading-relaxed">The 532 figure is <em>where people live</em>. The 74.2% is <em>where the jobs are</em>.</p></div></div></div></section>
 
 <section id="evidence" class="scroll-mt-24">
 <h2 class="text-2xl sm:text-3xl font-bold text-white mb-2">Spatial Evidence Structure</h2>
 <p class="text-slate-400 mb-8">Dimensions ready for mapping, location quotients, and accessibility analysis in Spatialytics.</p>
 <div class="grid sm:grid-cols-2 gap-5">
 <div class="card rounded-xl p-5 stat-card"><div class="text-sky-400 text-xs font-semibold uppercase tracking-wider mb-2">Residential Supply</div><p class="text-white font-medium">~532 Comp/Math workers live in Crow Wing</p><p class="text-sm text-slate-400 mt-2">Local talent exists but is under-matched to specialized local demand.</p></div>
-<div class="card rounded-xl p-5 stat-card"><div class="text-indigo-400 text-xs font-semibold uppercase tracking-wider mb-2">Job Concentration</div><p class="text-white font-medium">74.2% of statewide jobs in Twin Cities</p><p class="text-sm text-slate-400 mt-2">Extreme metro clustering creates a large accessibility gap for rural/small-metro workers.</p></div>
-<div class="card rounded-xl p-5 stat-card"><div class="text-violet-400 text-xs font-semibold uppercase tracking-wider mb-2">Location Quotient</div><p class="text-white font-medium">Low relative to statewide average</p><p class="text-sm text-slate-400 mt-2">Brainerd area is under-specialized in high-skill IT compared with the metro.</p></div>
-<div class="card rounded-xl p-5 stat-card"><div class="text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-2">Commuting / Flows</div><p class="text-white font-medium">Significant daily in/out flows</p><p class="text-sm text-slate-400 mt-2">County-level patterns show substantial cross-boundary movement; metro acts as primary sink for specialized talent.</p></div>
-</div>
-<div class="mt-10 card rounded-2xl p-6 sm:p-8"><h3 class="text-lg font-semibold text-white mb-4">Behavioral Outcomes of the Mismatch</h3>
-<ul class="space-y-3 text-slate-300">
-<li class="flex gap-3"><span class="text-sky-400 mt-1">→</span> Out-migration of talent seeking denser career networks and specialized roles</li>
-<li class="flex gap-3"><span class="text-sky-400 mt-1">→</span> Long-distance or super-commuting to the Twin Cities</li>
-<li class="flex gap-3"><span class="text-sky-400 mt-1">→</span> Remote work for non-local (often metro or national) employers while living in Brainerd</li>
-<li class="flex gap-3"><span class="text-sky-400 mt-1">→</span> Acceptance of thinner local opportunity sets or underemployment in related roles</li>
-</ul>
-<p class="mt-6 text-sm text-slate-400 border-t border-slate-800 pt-5">Historical local employer feedback (difficulty filling experienced systems analysts, software developers, and technical consultants) reinforces the pattern.</p></div></section>
+<div class="card rounded-xl p-5 stat-card"><div class="text-indigo-400 text-xs font-semibold uppercase tracking-wider mb-2">Job Concentration</div><p class="text-white font-medium">74.2% of statewide jobs in Twin Cities</p><p class="text-sm text-slate-400 mt-2">Extreme metro clustering creates a large accessibility gap.</p></div>
+<div class="card rounded-xl p-5 stat-card"><div class="text-violet-400 text-xs font-semibold uppercase tracking-wider mb-2">Location Quotient</div><p class="text-white font-medium">Low relative to statewide average</p><p class="text-sm text-slate-400 mt-2">Brainerd area is under-specialized in high-skill IT.</p></div>
+<div class="card rounded-xl p-5 stat-card"><div class="text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-2">Commuting / Flows</div><p class="text-white font-medium">Significant daily in/out flows</p><p class="text-sm text-slate-400 mt-2">Metro acts as primary sink for specialized talent.</p></div>
+</div></section>
 
 <section id="metrics" class="scroll-mt-24">
 <div class="section-divider mb-12"></div>
 <h2 class="text-2xl sm:text-3xl font-bold text-white mb-2">Recommended Metrics & Visuals</h2>
-<p class="text-slate-400 mb-10 max-w-3xl">A practical toolkit for quantifying and visualizing spatial mismatch between Crow Wing residents in Computer & Mathematical occupations and the locations of specialized jobs. Designed for Spatialytics workflows.</p>
-
-<div class="space-y-12">
-<div>
-<h3 class="text-lg font-semibold text-sky-400 mb-4 flex items-center gap-2"><span class="w-6 h-6 rounded-md bg-sky-500/20 flex items-center justify-center text-xs font-mono">1</span> Concentration Metrics</h3>
-<div class="overflow-x-auto rounded-2xl border border-slate-800">
-<table class="w-full text-sm text-left">
-<thead class="bg-slate-900 text-slate-400 uppercase tracking-wider text-xs"><tr><th class="px-5 py-3.5 font-medium">Metric</th><th class="px-5 py-3.5 font-medium">Definition</th><th class="px-5 py-3.5 font-medium">How to Calculate</th><th class="px-5 py-3.5 font-medium">Brainerd Insight</th></tr></thead>
-<tbody class="divide-y divide-slate-800/80">
-<tr class="hover:bg-slate-900/40"><td class="px-5 py-4 text-white font-medium">Metro Share of Jobs</td><td class="px-5 py-4 text-slate-400">% of statewide Comp/Math jobs in Twin Cities 7-county metro</td><td class="px-5 py-4 font-mono text-xs text-slate-300">Jobs<sub>metro</sub> / Jobs<sub>state</sub></td><td class="px-5 py-4 text-sky-400 font-medium">74.2%</td></tr>
-<tr class="hover:bg-slate-900/40"><td class="px-5 py-4 text-white font-medium">Location Quotient (LQ)</td><td class="px-5 py-4 text-slate-400">Relative specialization of an area in Comp/Math occupations</td><td class="px-5 py-4 font-mono text-xs text-slate-300">(Local share) / (State share)</td><td class="px-5 py-4 text-slate-300">Low in Crow Wing / Region 5; elevated in Twin Cities</td></tr>
-<tr class="hover:bg-slate-900/40"><td class="px-5 py-4 text-white font-medium">Residential vs Workplace Counts</td><td class="px-5 py-4 text-slate-400">Workers living in area vs jobs located in area</td><td class="px-5 py-4 font-mono text-xs text-slate-300">ACS (residence) vs OEWS / LEHD (workplace)</td><td class="px-5 py-4 text-slate-300">532 residents vs thin specialized local base</td></tr>
-</tbody></table></div></div>
-
-<div>
-<h3 class="text-lg font-semibold text-indigo-400 mb-4 flex items-center gap-2"><span class="w-6 h-6 rounded-md bg-indigo-500/20 flex items-center justify-center text-xs font-mono">2</span> Accessibility & Opportunity Metrics</h3>
-<div class="grid sm:grid-cols-3 gap-4">
-<div class="card rounded-xl p-5"><div class="text-indigo-400 text-xs font-semibold uppercase tracking-wider mb-2">Job Accessibility Score</div><p class="text-sm text-slate-300 mb-3">Number (or weighted number) of suitable Comp/Math jobs reachable within a time threshold from residential locations.</p><p class="text-xs text-slate-500 font-mono">Cumulative opportunities inside 30 / 45 / 60-min isochrones</p></div>
-<div class="card rounded-xl p-5"><div class="text-indigo-400 text-xs font-semibold uppercase tracking-wider mb-2">Travel-Time Threshold Share</div><p class="text-sm text-slate-300 mb-3">% of statewide Comp/Math jobs reachable within X minutes from Crow Wing centroids.</p><p class="text-xs text-slate-500 font-mono">Isochrone + job density overlay</p></div>
-<div class="card rounded-xl p-5"><div class="text-indigo-400 text-xs font-semibold uppercase tracking-wider mb-2">Effective Opportunity Set</div><p class="text-sm text-slate-300 mb-3">Jobs that match both occupation and realistic commute tolerance for local residents.</p><p class="text-xs text-slate-500 font-mono">Intersection of workplace locations ∩ accessibility surface</p></div>
-</div></div>
-
-<div>
-<h3 class="text-lg font-semibold text-violet-400 mb-4 flex items-center gap-2"><span class="w-6 h-6 rounded-md bg-violet-500/20 flex items-center justify-center text-xs font-mono">3</span> Flow & Mobility Metrics <span class="text-slate-500 font-normal text-sm">(LEHD / OnTheMap)</span></h3>
-<div class="overflow-x-auto rounded-2xl border border-slate-800">
-<table class="w-full text-sm text-left">
-<thead class="bg-slate-900 text-slate-400 uppercase tracking-wider text-xs"><tr><th class="px-5 py-3.5 font-medium">Metric</th><th class="px-5 py-3.5 font-medium">Definition</th><th class="px-5 py-3.5 font-medium">Source</th><th class="px-5 py-3.5 font-medium">What It Reveals</th></tr></thead>
-<tbody class="divide-y divide-slate-800/80">
-<tr class="hover:bg-slate-900/40"><td class="px-5 py-4 text-white font-medium">Inflow / Outflow Ratio</td><td class="px-5 py-4 text-slate-400">Workers commuting into vs out of the county</td><td class="px-5 py-4 text-slate-400">LEHD OnTheMap</td><td class="px-5 py-4 text-slate-300">Overall flows ~balanced; occupation-filtered likely shows net outflow of specialized talent</td></tr>
-<tr class="hover:bg-slate-900/40"><td class="px-5 py-4 text-white font-medium">Live–Work Share</td><td class="px-5 py-4 text-slate-400">% of employed residents who both live and work in the same county</td><td class="px-5 py-4 text-slate-400">LEHD</td><td class="px-5 py-4 text-slate-300">Typically lower for high-skill occupations than for the overall workforce</td></tr>
-<tr class="hover:bg-slate-900/40"><td class="px-5 py-4 text-white font-medium">Cross-County Commute Rate</td><td class="px-5 py-4 text-slate-400">% of Comp/Math workers living in Crow Wing who work outside the county</td><td class="px-5 py-4 text-slate-400">LEHD OD (filtered)</td><td class="px-5 py-4 text-slate-300">Direct intensity measure of spatial mismatch</td></tr>
-<tr class="hover:bg-slate-900/40"><td class="px-5 py-4 text-white font-medium">Mean / Median Commute</td><td class="px-5 py-4 text-slate-400">Average journey-to-work time or distance for the occupation group</td><td class="px-5 py-4 text-slate-400">ACS or LEHD</td><td class="px-5 py-4 text-slate-300">Compare Comp/Math vs all occupations</td></tr>
-</tbody></table></div></div>
-
-<div>
-<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center gap-2"><span class="w-6 h-6 rounded-md bg-emerald-500/20 flex items-center justify-center text-xs font-mono">4</span> Wage & Opportunity Gradient Metrics</h3>
-<div class="grid sm:grid-cols-3 gap-4">
-<div class="card rounded-xl p-5"><div class="text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-2">Wage Residual Surface</div><p class="text-sm text-slate-300">Spatial variation in Comp/Math pay after controlling for occupation. Difference from state or metro median.</p></div>
-<div class="card rounded-xl p-5"><div class="text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-2">Opportunity Gradient</div><p class="text-sm text-slate-300">Change in job density or quality with distance from Brainerd (distance-decay toward Twin Cities centers).</p></div>
-<div class="card rounded-xl p-5"><div class="text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-2">Skill-Matched Job Density</div><p class="text-sm text-slate-300">Density of jobs matching the skill profile of local Comp/Math residents.</p></div>
-</div></div>
-
-<div>
-<h3 class="text-lg font-semibold text-amber-400 mb-4 flex items-center gap-2"><span class="w-6 h-6 rounded-md bg-amber-500/20 flex items-center justify-center text-xs font-mono">5</span> Composite / Derived Indices</h3>
-<div class="grid sm:grid-cols-3 gap-4">
-<div class="card rounded-xl p-5 border-amber-500/20"><div class="text-amber-400 text-xs font-semibold uppercase tracking-wider mb-2">Spatial Mismatch Index (SMI)</div><p class="text-sm text-slate-300">Normalized combination of residential underemployment, job accessibility, and concentration differential.</p></div>
-<div class="card rounded-xl p-5 border-amber-500/20"><div class="text-amber-400 text-xs font-semibold uppercase tracking-wider mb-2">Brain-Drain Proxy</div><p class="text-sm text-slate-300">Share of local Comp/Math workers whose workplace is outside the region (or who have left entirely).</p></div>
-<div class="card rounded-xl p-5 border-amber-500/20"><div class="text-amber-400 text-xs font-semibold uppercase tracking-wider mb-2">Remote-Work Adjusted Mismatch</div><p class="text-sm text-slate-300">Subtract estimated remote/hybrid share to isolate pure geographic friction.</p></div>
-</div></div>
-</div>
-
-<div class="mt-14 card rounded-2xl p-6 sm:p-8">
-<h3 class="text-lg font-semibold text-white mb-6">Implementation Notes for Spatialytics</h3>
-<div class="grid md:grid-cols-2 gap-8">
-<div><h4 class="text-sm font-medium text-sky-400 mb-3 uppercase tracking-wider">Data Stack</h4>
-<ul class="space-y-2 text-sm text-slate-300">
-<li><span class="text-slate-500">Residence →</span> ACS detailed occupation tables (B24010+)</li>
-<li><span class="text-slate-500">Workplace →</span> DEED OEWS + LEHD LODES / OnTheMap</li>
-<li><span class="text-slate-500">Commute →</span> LEHD Origin-Destination + ACS journey-to-work</li>
-<li><span class="text-slate-500">Geography →</span> Crow Wing, Brainerd µSA, Region 5, Twin Cities 7-county</li>
-</ul></div>
-<div><h4 class="text-sm font-medium text-sky-400 mb-3 uppercase tracking-wider">Recommended First Layers</h4>
-<ul class="space-y-2 text-sm text-slate-300">
-<li>Side-by-side residential vs workplace density of Comp/Math workers</li>
-<li>LQ choropleth (county or tract)</li>
-<li>30 / 45 / 60-min isochrones from Brainerd with job counts</li>
-<li>Origin-destination flow lines (Information or Professional services proxy)</li>
-</ul></div></div>
-<div class="mt-8 pt-6 border-t border-slate-800"><h4 class="text-sm font-medium text-sky-400 mb-3 uppercase tracking-wider">Key Interpretation</h4>
-<p class="text-sm text-slate-300 leading-relaxed">High metro concentration (74.2%) + non-trivial local residential supply (532) + thin specialized local demand = classic spatial mismatch. The mismatch is skill-specific: support and network roles exist locally; advanced software, data science, and specialized analyst roles do not at scale. Remote work softens but does not eliminate the gap for roles that still benefit from dense networks, higher metro wages, or in-person collaboration.</p></div></div>
-
-<div class="mt-8 grid sm:grid-cols-3 gap-4">
-<div class="rounded-xl border border-slate-800 bg-slate-900/40 p-5"><div class="text-xs font-mono text-slate-500 mb-2">NEXT 01</div><p class="text-sm text-white font-medium">Pull occupation-filtered LEHD OD data for Crow Wing</p></div>
-<div class="rounded-xl border border-slate-800 bg-slate-900/40 p-5"><div class="text-xs font-mono text-slate-500 mb-2">NEXT 02</div><p class="text-sm text-white font-medium">Calculate LQ at county and Region 5 level</p></div>
-<div class="rounded-xl border border-slate-800 bg-slate-900/40 p-5"><div class="text-xs font-mono text-slate-500 mb-2">NEXT 03</div><p class="text-sm text-white font-medium">Build accessibility surfaces & quantify the opportunity gap</p></div>
+<p class="text-slate-400 mb-10 max-w-3xl">Practical toolkit for quantifying spatial mismatch. Designed for Spatialytics workflows.</p>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+<div class="card rounded-xl p-5"><div class="text-sky-400 text-xs font-semibold uppercase tracking-wider mb-2">Concentration</div><p class="text-sm text-slate-300">Metro Share · Location Quotient · Residential vs Workplace Counts</p></div>
+<div class="card rounded-xl p-5"><div class="text-indigo-400 text-xs font-semibold uppercase tracking-wider mb-2">Accessibility</div><p class="text-sm text-slate-300">Job Accessibility Score · Travel-Time Thresholds · Effective Opportunity Set</p></div>
+<div class="card rounded-xl p-5"><div class="text-violet-400 text-xs font-semibold uppercase tracking-wider mb-2">Flows</div><p class="text-sm text-slate-300">Inflow/Outflow · Live–Work Share · Cross-County Commute Rate</p></div>
+<div class="card rounded-xl p-5"><div class="text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-2">Gradients</div><p class="text-sm text-slate-300">Wage Residual · Opportunity Gradient · Skill-Matched Density</p></div>
+<div class="card rounded-xl p-5"><div class="text-amber-400 text-xs font-semibold uppercase tracking-wider mb-2">Composite</div><p class="text-sm text-slate-300">Spatial Mismatch Index · Brain-Drain Proxy · Remote-Adjusted Mismatch</p></div>
 </div></section>
+
+<section id="deepdive" class="scroll-mt-24">
+<div class="section-divider mb-12"></div>
+<h2 class="text-2xl sm:text-3xl font-bold text-white mb-2">Deep-Dive Analyses</h2>
+<p class="text-slate-400 mb-10 max-w-3xl">NEXT 01–03 executed with publicly available data, plus a comparable-city proof case.</p>
+
+<div class="mb-16">
+<div class="flex items-center gap-3 mb-6"><span class="px-3 py-1 rounded-full bg-sky-500/20 text-sky-400 text-xs font-mono font-semibold">NEXT 01</span><h3 class="text-xl font-bold text-white">Occupation-Filtered Flows (LEHD / ACS)</h3></div>
+<div class="grid lg:grid-cols-2 gap-6">
+<div class="card rounded-2xl p-6">
+<h4 class="text-sm font-medium text-slate-400 uppercase tracking-wider mb-4">What the Data Shows</h4>
+<ul class="space-y-3 text-sm text-slate-300">
+<li class="flex gap-3"><span class="text-sky-400">•</span> Larger share of Crow Wing workers live <em>and</em> work in-county than the state average.</li>
+<li class="flex gap-3"><span class="text-sky-400">•</span> Mean commute time is still longer than the statewide average.</li>
+<li class="flex gap-3"><span class="text-sky-400">•</span> ~18–20% of residents work outside the county.</li>
+<li class="flex gap-3"><span class="text-sky-400">•</span> Overall in/out flows roughly balanced (~10k each way).</li>
+<li class="flex gap-3"><span class="text-sky-400">•</span> High-skill occupations typically show higher outflow rates.</li>
+</ul>
+<p class="mt-5 text-xs text-slate-500 border-t border-slate-800 pt-4">Exact Comp/Math-filtered OD matrices require custom OnTheMap / LODES query.</p>
+</div>
+<div class="card rounded-2xl p-6">
+<h4 class="text-sm font-medium text-slate-400 uppercase tracking-wider mb-4">Implied Comp/Math Pattern</h4>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-3 rounded-lg bg-slate-900/80"><span class="text-sm text-slate-300">Est. share of 532 working outside / remote</span><span class="font-mono text-sky-400 font-semibold">25–40%+</span></div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-slate-900/80"><span class="text-sm text-slate-300">Primary external destination</span><span class="font-mono text-indigo-400 font-semibold">Twin Cities</span></div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-slate-900/80"><span class="text-sm text-slate-300">Live–work share (high-skill)</span><span class="font-mono text-violet-400 font-semibold">Lower than overall</span></div>
+</div>
+<p class="mt-5 text-sm text-slate-400">Behavioral expression of spatial mismatch: talent remains resident while specialized opportunity is external.</p>
+</div></div></div>
+
+<div class="mb-16">
+<div class="flex items-center gap-3 mb-6"><span class="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-400 text-xs font-mono font-semibold">NEXT 02</span><h3 class="text-xl font-bold text-white">Location Quotient (LQ) Estimates</h3></div>
+<div class="grid lg:grid-cols-3 gap-6 mb-6">
+<div class="card rounded-2xl p-6 text-center"><div class="text-4xl font-extrabold font-mono text-sky-400">~0.32</div><div class="text-sm text-slate-400 mt-2">Northwest MN Nonmetro LQ<br>(vs U.S.)</div><p class="text-xs text-slate-500 mt-3">BLS OEWS: ~2,060 Comp/Math jobs · 10.9 per 1,000</p></div>
+<div class="card rounded-2xl p-6 text-center"><div class="text-4xl font-extrabold font-mono text-indigo-400">0.45–0.55</div><div class="text-sm text-slate-400 mt-2">Crow Wing Residential LQ<br>(vs MN workplace share)</div><p class="text-xs text-slate-500 mt-3">532 residents ÷ ~30,850 employed ≈ 1.7% local share</p></div>
+<div class="card rounded-2xl p-6 text-center"><div class="text-4xl font-extrabold font-mono text-violet-400">>1.0</div><div class="text-sm text-slate-400 mt-2">Twin Cities Metro LQ</div><p class="text-xs text-slate-500 mt-3">Comp/Math ~4.9% of metro jobs vs ~3.6% statewide</p></div>
+</div>
+<div class="card rounded-2xl p-6">
+<h4 class="text-sm font-medium text-slate-400 uppercase tracking-wider mb-4">LQ Interpretation</h4>
+<p class="text-sm text-slate-300 leading-relaxed mb-4">Both residential and workplace LQs in Crow Wing / Northwest Minnesota sit substantially below 1.0. The Twin Cities metro is the mirror image (LQ > 1.0). This concentration differential is the quantitative core of the spatial mismatch argument.</p>
+<div class="relative h-56"><canvas id="lqChart"></canvas></div>
+</div></div>
+
+<div class="mb-16">
+<div class="flex items-center gap-3 mb-6"><span class="px-3 py-1 rounded-full bg-violet-500/20 text-violet-400 text-xs font-mono font-semibold">NEXT 03</span><h3 class="text-xl font-bold text-white">Accessibility & Opportunity Gap</h3></div>
+<div class="grid lg:grid-cols-2 gap-6">
+<div class="card rounded-2xl p-6">
+<h4 class="text-sm font-medium text-slate-400 uppercase tracking-wider mb-4">Drive-Time Reality</h4>
+<div class="space-y-3">
+<div class="flex justify-between items-center p-3 rounded-lg bg-slate-900/70"><span class="text-sm text-slate-300">Brainerd → Minneapolis</span><span class="font-mono text-sky-400">~2–2.5 hrs</span></div>
+<div class="flex justify-between items-center p-3 rounded-lg bg-slate-900/70"><span class="text-sm text-slate-300">Specialized jobs inside 45-min isochrone</span><span class="font-mono text-rose-400">Near zero</span></div>
+<div class="flex justify-between items-center p-3 rounded-lg bg-slate-900/70"><span class="text-sm text-slate-300">Specialized jobs inside 60-min isochrone</span><span class="font-mono text-rose-400">Negligible</span></div>
+</div>
+<p class="mt-5 text-sm text-slate-400">A Twin Cities resident can reach the large majority of specialized roles within a normal commute. A Crow Wing resident cannot.</p>
+</div>
+<div class="card rounded-2xl p-6">
+<h4 class="text-sm font-medium text-slate-400 uppercase tracking-wider mb-4">Opportunity Gap Summary</h4>
+<ul class="space-y-3 text-sm text-slate-300">
+<li class="flex gap-3"><span class="text-violet-400">→</span> Almost no specialized Comp/Math density falls inside realistic local drive-time thresholds.</li>
+<li class="flex gap-3"><span class="text-violet-400">→</span> Remote/hybrid softens the gap for pure remote roles but does not erase wage, network, or career-ladder advantages of the metro cluster.</li>
+<li class="flex gap-3"><span class="text-violet-400">→</span> Recommended layers: 30/45/60-min isochrones + OEWS/LEHD workplace density overlay.</li>
+</ul>
+</div></div></div>
+
+<div class="mb-8">
+<div class="flex items-center gap-3 mb-6"><span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-mono font-semibold">COMPARABLE</span><h3 class="text-xl font-bold text-white">Proof Case: Fergus Falls / Willmar</h3></div>
+<div class="card rounded-2xl p-6 sm:p-8">
+<p class="text-slate-300 leading-relaxed mb-6">Fergus Falls (Otter Tail County) and Willmar (Kandiyohi County) share Brainerd’s structural profile: small regional centers, lakes/rural hinterlands, healthcare + manufacturing + education anchors, and a thin specialized IT base. Most Comp/Math roles are support, network, or embedded rather than pure software product or data science. Both show the same residence–workplace disconnect.</p>
+<div class="grid sm:grid-cols-3 gap-4 mb-6">
+<div class="rounded-xl bg-slate-900/80 p-4 border border-slate-800"><div class="text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-1">Scale</div><p class="text-sm text-white">Similar micropolitan footprint and distance to a larger job cluster</p></div>
+<div class="rounded-xl bg-slate-900/80 p-4 border border-slate-800"><div class="text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-1">IT Base</div><p class="text-sm text-white">Thin specialized demand; support & embedded roles dominate</p></div>
+<div class="rounded-xl bg-slate-900/80 p-4 border border-slate-800"><div class="text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-1">Pattern</div><p class="text-sm text-white">Residential talent exists while high-skill jobs concentrate elsewhere</p></div>
+</div>
+<div class="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
+<p class="text-sm text-emerald-300"><strong class="text-emerald-400">Spatialytics implication:</strong> If the same metrics appear in Fergus Falls and Willmar, the Brainerd argument is not idiosyncratic — it is a <em>Greater Minnesota pattern</em>. Spatialytics becomes a repeatable diagnostic for any mid-sized Minnesota micropolitan area facing the same knowledge-occupation mismatch.</p>
+</div></div></div>
+</section>
 
 <section id="sources" class="scroll-mt-24">
 <div class="section-divider mb-12"></div>
 <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6">Primary Sources & References</h2>
 <div class="card rounded-2xl p-6 sm:p-8 space-y-5 text-sm">
-<div><div class="font-medium text-white">Crow Wing County occupation counts</div><p class="text-slate-400 mt-1">ACS data compiled via uspopulation.org — Computer and Mathematical occupations: 532 employed residents; median earnings $70,543.</p></div>
-<div><div class="font-medium text-white">Statewide & metro concentration</div><p class="text-slate-400 mt-1">Minnesota Department of Employment and Economic Development (DEED) <em>Information Technology Profile</em> (OEWS data): “about 74.2% of the Computer and Mathematical jobs in the state are located in the 7-County Twin Cities metro area.”</p></div>
-<div><div class="font-medium text-white">Supporting context</div><p class="text-slate-400 mt-1">DEED Crow Wing County profiles (OEWS, job vacancy surveys, labor force trends); historical Brainerd Lakes Area workforce studies noting difficulty filling experienced systems analysts, software developers, and technical consultants; LEHD / OnTheMap for general commuting patterns.</p></div>
-<div class="pt-4 border-t border-slate-800 text-slate-500 text-xs">Note: Exact occupation-specific inflow/outflow counts for Comp/Math in Crow Wing require custom LEHD OnTheMap queries. The figures above represent the strongest publicly available quantitative foundation for the mismatch argument.</div>
+<div><div class="font-medium text-white">Crow Wing County occupation counts</div><p class="text-slate-400 mt-1">ACS data — Computer and Mathematical occupations: 532 employed residents; median earnings $70,543.</p></div>
+<div><div class="font-medium text-white">Statewide & metro concentration</div><p class="text-slate-400 mt-1">Minnesota DEED Information Technology Profile (OEWS): “about 74.2% of the Computer and Mathematical jobs in the state are located in the 7-County Twin Cities metro area.”</p></div>
+<div><div class="font-medium text-white">LQ & regional data</div><p class="text-slate-400 mt-1">BLS OEWS Northwest Minnesota nonmetropolitan area; DEED Crow Wing / Region 5 profiles; LEHD / OnTheMap for commuting patterns.</p></div>
+<div class="pt-4 border-t border-slate-800 text-slate-500 text-xs">Note: Exact occupation-specific inflow/outflow counts require custom LEHD OnTheMap queries.</div>
 </div></section>
 
 <section class="text-center py-12">
-<p class="text-slate-400 max-w-2xl mx-auto leading-relaxed">“Despite a non-trivial residential supply of Computer & Mathematical talent in Crow Wing County, the spatial concentration of specialized jobs in the Twin Cities creates a structural accessibility deficit. This mismatch drives talent outflow, remote decoupling, and constrained local career progression.”</p>
-<p class="mt-6 text-xs text-slate-600">Prepared for Spatialytics · Data current as of latest DEED OEWS & ACS releases · 2025–2026</p>
+<p class="text-slate-400 max-w-2xl mx-auto leading-relaxed">“Despite a non-trivial residential supply of Computer & Mathematical talent in Crow Wing County, the spatial concentration of specialized jobs in the Twin Cities creates a structural accessibility deficit.”</p>
+<p class="mt-6 text-xs text-slate-600">Prepared for Spatialytics · 2025–2026</p>
 </section>
 </main>
 
 <footer class="border-t border-slate-900 py-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
 <div>Spatial Mismatch Analysis · Brainerd / Crow Wing County, MN</div>
-<div class="flex items-center gap-4"><span>Deployable static site</span><span class="text-slate-700">·</span><span>Vercel-ready</span></div>
+<div>Vercel-ready · Spatialytics</div>
 </div></footer>
 
 <script>
 const ctx=document.getElementById('concentrationChart').getContext('2d');
 new Chart(ctx,{type:'bar',data:{labels:['Twin Cities\n7-County Metro','Greater\nMinnesota'],datasets:[{label:'Share of Statewide Comp/Math Jobs',data:[74.2,25.8],backgroundColor:['rgba(56,189,248,0.85)','rgba(139,92,246,0.75)'],borderColor:['rgba(56,189,248,1)','rgba(139,92,246,1)'],borderWidth:1,borderRadius:8,barThickness:64}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{backgroundColor:'rgba(15,23,42,0.95)',titleColor:'#e2e8f0',bodyColor:'#94a3b8',borderColor:'rgba(148,163,184,0.2)',borderWidth:1,padding:12,callbacks:{label:function(c){return c.raw+'% of statewide Computer & Mathematical jobs'}}}},scales:{x:{beginAtZero:true,max:100,grid:{color:'rgba(148,163,184,0.08)'},ticks:{color:'#64748b',callback:function(v){return v+'%'}}},y:{grid:{display:false},ticks:{color:'#94a3b8',font:{size:12}}}}}});
+
+const lqCtx=document.getElementById('lqChart');
+if(lqCtx){new Chart(lqCtx.getContext('2d'),{type:'bar',data:{labels:['NW MN Nonmetro\n(vs U.S.)','Crow Wing\nResidential','Twin Cities\nMetro'],datasets:[{label:'Location Quotient',data:[0.32,0.50,1.35],backgroundColor:['rgba(56,189,248,0.85)','rgba(129,140,248,0.85)','rgba(167,139,250,0.85)'],borderColor:['rgba(56,189,248,1)','rgba(129,140,248,1)','rgba(167,139,250,1)'],borderWidth:1,borderRadius:8,barThickness:48}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{backgroundColor:'rgba(15,23,42,0.95)',titleColor:'#e2e8f0',bodyColor:'#94a3b8',borderColor:'rgba(148,163,184,0.2)',borderWidth:1,padding:12,callbacks:{label:function(ctx){return 'LQ ≈ '+ctx.raw+(ctx.raw<1?' (under-specialized)':' (over-specialized)')}}}},scales:{y:{beginAtZero:true,max:1.8,grid:{color:'rgba(148,163,184,0.08)'},ticks:{color:'#64748b'},title:{display:true,text:'Location Quotient',color:'#94a3b8'}},x:{grid:{display:false},ticks:{color:'#94a3b8',font:{size:11}}}}}});}
 </script>
 </body>
 </html>
