@@ -2,46 +2,44 @@
 
 **The operating system for small businesses that happen to understand geography.**
 
-- **Vision site:** `index.html` — product philosophy, all 20 modules, build order, Brainerd spatial-mismatch case study
-- **Interactive prototypes:** `prototypes.html` — working UX demos for modules 1–4 (Dashboard, Job Profitability, AR, Don't-Forget)
-- **App scaffold:** `/app` — folder structure for the real multi-tenant product
+## What's in this repo
 
-## Quick links
+| Path | Purpose |
+|------|---------|
+| `index.html` | Vision site — philosophy, 20 modules, Brainerd spatial case |
+| `prototypes.html` | Static interactive prototypes (no backend) |
+| `web/` | **Next.js app** — real product scaffold with 4 priority modules |
+| `app/` | Legacy notes / module placeholders |
 
-| Page | What it is |
-|------|------------|
-| [index.html](index.html) | Full vision + spatial case |
-| [prototypes.html](prototypes.html) | Clickable prototypes (sample data) |
-| [app/](app/) | Real product scaffold |
+## Next.js app (`web/`)
 
-## Priority modules (prototyped)
+```bash
+cd web
+npm install
+npm run dev
+```
 
-1. Daily Business Dashboard + Needs Attention
-2. Job Profitability calculator
-3. Accounts Receivable dashboard
-4. Don't-Forget Engine
+Routes:
 
-## Brainerd spatial case (why geography still matters)
+- `/` — home
+- `/dashboard` — Daily Dashboard + Needs Attention
+- `/profitability` — Job Profitability calculator
+- `/receivables` — Accounts Receivable
+- `/dont-forget` — Don't-Forget Engine
 
-- 532 Comp/Math residents in Crow Wing County
-- 74.2% of statewide Comp/Math jobs in Twin Cities metro
-- NW MN LQ ~0.32 · Crow Wing residential LQ ~0.45–0.55
-- Comparable pattern: Fergus Falls / Willmar
+Auth placeholder in `web/lib/auth.ts`. Wire Clerk / Auth.js / Supabase next, then multi-tenant `org_id`.
 
 ## Deploy
 
-Static site on Vercel. No build step.
+**Static marketing:** Vercel from repo root (current).
 
-```bash
-npx vercel --prod
-```
+**App:** Point a Vercel project at `web/` as the root directory.
 
-## Next engineering
+## Brainerd spatial case
 
-1. Init Next.js (or keep static and grow prototypes)
-2. Auth + org model
-3. Replace sample data with API + Postgres
-4. Ship dashboard as first paid surface
+- 532 Comp/Math residents in Crow Wing
+- 74.2% of statewide Comp/Math jobs in Twin Cities
+- LQ ~0.32 (NW MN) / 0.45–0.55 (Crow Wing residential)
 
 ---
 
