@@ -1,38 +1,58 @@
 # Spatialytics Web App
 
-Next.js App Router scaffold for the real product.
+Next.js + **Clerk** auth + four priority modules.
 
-## Priority modules
+## Setup (5 minutes)
 
-| Route | Module |
-|-------|--------|
-| `/dashboard` | Daily Dashboard + Needs Attention |
-| `/profitability` | Job Profitability calculator |
-| `/receivables` | Accounts Receivable |
-| `/dont-forget` | Don't-Forget Engine |
+### 1. Create a Clerk app
 
-## Run locally
+1. Go to [dashboard.clerk.com](https://dashboard.clerk.com)
+2. Create application (Email + Google is fine)
+3. Copy **Publishable key** and **Secret key**
+
+### 2. Env file
 
 ```bash
-cd web
+cp .env.local.example .env.local
+```
+
+Paste keys into `.env.local`:
+
+```
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_...
+CLERK_SECRET_KEY=sk_test_...
+```
+
+### 3. Run
+
+```bash
 npm install
 npm run dev
 ```
 
-Open http://localhost:3000
+Open http://localhost:3000 → Sign up → Dashboard.
 
-## Auth (next step)
+## Protected routes
 
-See `lib/auth.ts`. Wire Clerk, Auth.js, or Supabase Auth, then:
+Middleware requires auth for everything except `/`, `/sign-in`, `/sign-up`.
 
-1. Protect routes with session check
-2. Add `org_id` to every table / query
-3. Replace `lib/sample-data.ts` with real DB calls
+## Multi-tenant orgs (next)
+
+- Enable **Clerk Organizations**, or
+- Store `orgId` in metadata / Postgres
+- Scope every query by `orgId` from `getSession()`
+
+## Modules
+
+| Route | Module |
+|-------|--------|
+| `/dashboard` | Daily Dashboard |
+| `/profitability` | Job Profitability |
+| `/receivables` | Accounts Receivable |
+| `/dont-forget` | Don't-Forget Engine |
 
 ## Deploy on Vercel
 
-Set Root Directory = `web` in the Vercel project, or:
-
-```bash
-cd web && npx vercel
-```
+1. Root Directory = `web`
+2. Add Clerk env vars in Vercel
+3. Add production URL in Clerk → Domains

@@ -1,15 +1,24 @@
 import { todayStats, needsAttention } from "@/lib/sample-data";
-import { getDemoSession } from "@/lib/auth";
+import { getSession } from "@/lib/auth";
+import { redirect } from "next/navigation";
 
-export default function DashboardPage() {
-  const user = getDemoSession();
+export default async function DashboardPage() {
+  const user = await getSession();
+  if (!user) redirect("/sign-in");
 
   return (
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold text-white">Daily Dashboard</h1>
         <p className="text-sm text-slate-400 mt-1">
-          Good morning, {user.name} · org <code className="text-sky-400">{user.orgId}</code>
+          Good morning{user.name ? `, ${user.name}` : ""}
+          {user.orgId ? (
+            <>
+              {" "}· org <code className="text-sky-400">{user.orgId}</code>
+            </>
+          ) : (
+            <span className="text-amber-400/80"> · no org yet (enable Clerk Organizations or set metadata)</span>
+          )}
         </p>
       </div>
 

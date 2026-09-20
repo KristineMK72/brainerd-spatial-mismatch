@@ -1,25 +1,38 @@
 /**
- * Auth placeholder.
- *
- * Next steps:
- * 1. Add Clerk, Auth.js, or Supabase Auth
- * 2. Require session on all protected routes
- * 3. Scope every query by org_id (multi-tenant)
+ * Auth helpers for Spatialytics.
+ * Clerk handles identity. Scope every DB query by orgId from getSession().
  */
+
+import { auth, currentUser } from "@clerk/nextjs/server";
 
 export type SessionUser = {
   id: string;
-  email: string;
-  orgId: string;
-  name?: string;
+  email: string | undefined;
+  orgId: string | null;
+  name: string | null;
 };
 
-/** Demo user until real auth is wired */
-export function getDemoSession(): SessionUser {
+export async function getSession(): Promise<SessionUser | null> {
+  const { userId, orgId } = await auth();
+  if (!userId) return null;
+
+  const user = await currentUser();
+  const email = user?.emailAddresses?.[0]?.emailAddress;
+  const name =
+    user?.fullName ||
+    [user?.firstName, user?.lastName].filter(Boolean).join(" ") ||
+    null;
+
   return {
-    id: "demo-user-1",
-    email: "owner@brainerd-demo.local",
-    orgId: "org-brainerd-demo",
-    name: "Demo Owner",
+    id: userId,
+    email,
+    orgId: orgId ?? (user?.privateMetadata?.orgId as string | undefined) ?? null,
+    name,
   };
+}
+
+export async function requireSession(): Promise<SessionUser> {
+  const session = await getSession();
+  if (!session) throw new Error("Unauthorized");
+  return session;
 }

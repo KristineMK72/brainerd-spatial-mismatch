@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { UserButton, SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 
 const links = [
   { href: "/dashboard", label: "Dashboard" },
@@ -17,12 +18,26 @@ export function Nav() {
           </div>
           <span className="font-semibold text-white">Spatialytics</span>
         </Link>
-        <div className="flex gap-4 text-sm text-slate-400">
-          {links.map((l) => (
-            <Link key={l.href} href={l.href} className="hover:text-sky-400 transition">
-              {l.label}
+        <div className="flex items-center gap-4 text-sm text-slate-400">
+          <SignedIn>
+            {links.map((l) => (
+              <Link key={l.href} href={l.href} className="hover:text-sky-400 transition hidden sm:inline">
+                {l.label}
+              </Link>
+            ))}
+            <UserButton afterSignOutUrl="/" />
+          </SignedIn>
+          <SignedOut>
+            <SignInButton mode="modal">
+              <button className="text-sky-400 hover:text-sky-300 font-medium">Sign in</button>
+            </SignInButton>
+            <Link
+              href="/sign-up"
+              className="px-3 py-1.5 rounded-lg bg-sky-500 text-slate-950 text-sm font-semibold hover:bg-sky-400"
+            >
+              Sign up
             </Link>
-          ))}
+          </SignedOut>
         </div>
       </div>
     </nav>
