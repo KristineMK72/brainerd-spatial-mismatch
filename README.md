@@ -2,18 +2,9 @@
 
 A polished, data-driven spatial analysis site examining the residence–workplace mismatch for Computer & Mathematical occupations in the Brainerd Lakes area (Crow Wing County, Minnesota).
 
-**Live-ready for Vercel.**
+**Live on Vercel** · Ready for Spatialytics
 
-## What's Inside
-
-- Clear core argument framed for Spatialytics
-- Key quantitative data table (ACS residential supply + DEED workplace concentration)
-- Interactive Chart.js visualization of metro vs. Greater Minnesota job share
-- Spatial evidence cards and analytical narrative
-- Recommended metrics & map types for further Spatialytics work
-- Full primary sources and references
-
-## Key Findings Highlighted
+## Key Findings
 
 | Metric | Value |
 |--------|-------|
@@ -21,48 +12,58 @@ A polished, data-driven spatial analysis site examining the residence–workplac
 | Share of statewide Comp/Math jobs in Twin Cities metro | **74.2%** |
 | Share in Greater Minnesota | **25.8%** |
 
-## Deploy to Vercel
+## What’s on the Site
 
-### Option 1 – Vercel CLI
-```bash
-cd brainerd-spatial-mismatch
-npx vercel
-```
+- Clear core argument framed for Spatialytics
+- Key quantitative data table (ACS residential supply + DEED workplace concentration)
+- Interactive Chart.js visualization of metro vs Greater Minnesota job share
+- Spatial evidence cards and analytical narrative
+- **Full Recommended Metrics & Visuals toolkit**
+- Implementation notes and next analytical steps
+- Primary sources and references
 
-### Option 2 – GitHub + Vercel Dashboard
-1. Push this folder to a GitHub repository
-2. Import the repo in [vercel.com](https://vercel.com)
-3. Framework Preset: **Other** (static)
-4. Deploy
+## Recommended Metrics Toolkit
 
-No build step required — this is a pure static site (HTML + Tailwind CDN + Chart.js).
+### 1. Concentration Metrics
+- Metro Share of Jobs
+- Location Quotient (LQ)
+- Residential vs Workplace Counts
 
-### Option 3 – Drag & Drop
-Zip the folder and drop it on vercel.com/new.
+### 2. Accessibility & Opportunity Metrics
+- Job Accessibility Score (cumulative opportunities in 30/45/60-min isochrones)
+- Travel-Time Threshold Share
+- Effective Opportunity Set
 
-## Local Preview
+### 3. Flow & Mobility Metrics (LEHD / OnTheMap)
+- Inflow / Outflow Ratio
+- Live–Work Share
+- Cross-County Commute Rate
+- Mean / Median Commute
 
-Simply open `index.html` in a browser, or serve it:
+### 4. Wage & Opportunity Gradient Metrics
+- Wage Residual Surface
+- Opportunity Gradient
+- Skill-Matched Job Density
 
-```bash
-npx serve .
-# or
-python3 -m http.server 3000
-```
+### 5. Composite / Derived Indices
+- Spatial Mismatch Index (SMI)
+- Brain-Drain Proxy
+- Remote-Work Adjusted Mismatch
+
+## Data Stack for Spatialytics
+
+- **Residence**: ACS detailed occupation tables
+- **Workplace**: DEED OEWS + LEHD LODES / OnTheMap
+- **Commute**: LEHD Origin-Destination + ACS journey-to-work
+- **Geography**: Crow Wing County, Brainerd micropolitan, Region 5, Twin Cities 7-county
 
 ## Tech
 
-- Tailwind CSS (CDN)
-- Chart.js (CDN)
-- Inter + JetBrains Mono fonts
-- Fully responsive, dark aesthetic optimized for data storytelling
+- Pure static HTML + Tailwind CSS (CDN) + Chart.js (CDN)
+- Fully responsive dark aesthetic
 
-## Data Sources
+## Deploy
 
-- U.S. Census Bureau ACS (via uspopulation.org compilation) — residential occupation counts
-- Minnesota DEED Occupational Employment & Wage Statistics (OEWS) and Information Technology Profile — workplace concentration
-- Supporting DEED county profiles and historical Brainerd Lakes workforce studies
+No build step required. Framework preset on Vercel: **Other** (static).
 
----
-
-Built for Spatialytics workflows · Ready for further map layers, LQ analysis, and LEHD flow queries.
+Built for Spatialytics workflows · Data from latest DEED OEWS & ACS releases (2025–2026)
