@@ -1,0 +1,10 @@
+{
+  "name": "brainerd-spatial-mismatch",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Spatial mismatch analysis of Computer & Mathematical occupations in Brainerd / Crow Wing County, MN — ready for Spatialytics and Vercel",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  }
+}
